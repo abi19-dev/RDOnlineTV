@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+.app {
+  position: relative;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 30, 40, 1)), url('./images/avengers.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  /* Takes 100% of the viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  text-align: center;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  margin-top: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  background-color: rgba(0, 30, 40, 0.4);
+  /* Background color with 40% opacity */
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+}
+
+.navbar-logo img {
+  height: 33px;
+  width: 174px;
+  /* Adjust as needed */
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: center;
+  /* Center the links horizontally */
+  align-items: center;
+  flex-grow: 1;
+  margin-right: 174px;
+}
+
+.navbar-links a {
+  margin: 0 20px;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.my-button {
+  background-color: #D8FF00;
+  width: 200px;
+  height: 40px;
+  border-radius: 70px;
+  align-self: center;
+  cursor: pointer;
+}
+
+.button-text {
+  font-weight: bold;
 }

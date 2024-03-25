@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './App.css'; // Import your CSS file for styling
+import Navbar from './components/Navbar'; // Import your Navbar component
+import logo from './images/rdonlinetv.svg';
+import MyButton from './components/MyButton';
 
 function App() {
+  const handleClick = () => {
+    console.log('Button clicked!');
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+      <div className="background">
+        {/* Add your content here */}
+        <div className="content">
+          <img src={logo} style={{ width: '720px', height: '137px' }} />
+          <MyButton onClick={handleClick} className="my-button">
+            KANALI
+          </MyButton>
+        </div>
+      </div>
     </div>
   );
 }
