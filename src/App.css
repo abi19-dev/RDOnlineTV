@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.background {
+#home {
   background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 30, 40, 1)), url('./images/avengers.jpg');
   background-size: cover;
   background-position: center;
@@ -13,12 +13,54 @@
   align-items: center;
 }
 
-.content {
+#channels {
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 30, 40, 1)), url('./images/avengers2.png');
+  background-size: cover;
+  background-position: center;
+  height: 2411px;
+  padding-top: 80px;
+  width: 100%;
+  /* Takes 100% of the viewport height */
+}
+
+.homeContent {
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: center;
   color: white;
+}
+
+.channelsContent {}
+
+.contentColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  justify-content: center;
+}
+
+.flagBox {
+  width: 250px;
+  height: 208px;
+  background-color: rgba(0, 30, 40, 0.4);
+  /* Background color with 40% opacity */
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.contentRow {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+  gap: 53px;
 }
 
 .container {
@@ -40,11 +82,14 @@
   color: #fff;
   backdrop-filter: blur(10px);
   border-radius: 20px;
+  position: fixed;
+  z-index: 1000;
 }
 
 .navbar-logo img {
   height: 33px;
   width: 174px;
+  cursor: pointer;
   /* Adjust as needed */
 }
 
@@ -73,6 +118,22 @@
   cursor: pointer;
 }
 
+.channelsTitle {
+  align-self: center;
+}
+
 .button-text {
   font-weight: bold;
+}
+
+.flag {
+  width: 158px;
+  height: 83px;
+  margin-top: 10px;
+  border-radius: 25px;
+  align-self: center;
+}
+
+.nameOfCountry {
+  align-self: center;
 }

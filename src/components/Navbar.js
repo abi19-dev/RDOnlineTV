@@ -7,14 +7,21 @@ const Navbar = () => {
         scroll.scrollToTop();
     };
 
+    const scrollToSection = (sectionId) => {
+        const section = document.querySelector(sectionId); // Replace '#channels' with the ID of the section you want to scroll to
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <div className='container'>
             <nav className="navbar">
                 <div className="navbar-logo">
-                    <img src={logo} alt="Logo" />
+                    <img src={logo} onClick={() => scrollToSection('#home')} alt="Logo" />
                 </div>
                 <div className="navbar-links">
-                    <Link to="/">Home</Link>
+                    <Link onClick={() => scrollToSection('#channels')}>Home</Link>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Contact</Link>
                     <Link to="/about">About</Link>
