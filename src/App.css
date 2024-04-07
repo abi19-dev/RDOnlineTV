@@ -3,7 +3,7 @@
 }
 
 #home {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 30, 40, 1)), url('./images/avengers.jpg');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 30, 40, 1)), url('./images/pozadina.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -14,13 +14,29 @@
 }
 
 #channels {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 30, 40, 1)), url('./images/avengers2.png');
+  background-image: linear-gradient(to bottom, rgba(0, 30, 40, 1), rgba(0, 30, 40, 0)),
+    /* Gornji gradijent */
+    linear-gradient(to top, rgba(0, 30, 40, 1), rgba(0, 30, 40, 0)), url('./images/avengers.jpg');
   background-size: cover;
   background-position: center;
-  height: 2411px;
+  min-height: 100vh;
+  height: auto;
   padding-top: 80px;
   width: 100%;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
   /* Takes 100% of the viewport height */
+}
+
+#contact {
+  background-image: linear-gradient(to top, rgba(0, 30, 40, 0), rgba(0, 30, 40, 1)), url('./images/pozadina.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  padding-top: 80px;
+  width: 100%;
 }
 
 .homeContent {
@@ -28,6 +44,7 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  align-self: center;
   color: white;
 }
 
@@ -35,14 +52,16 @@
 
 .contentColumn {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 45px;
   justify-content: center;
+  color: red
 }
 
 .flagBox {
-  width: 250px;
-  height: 208px;
+  width: 20%;
+  height: 100px;
   background-color: rgba(0, 30, 40, 0.4);
   /* Background color with 40% opacity */
   color: #fff;
@@ -51,8 +70,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  cursor: pointer;
   justify-content: center;
+}
+
+.flagBoxTxt {
+  text-align: center;
 }
 
 .contentRow {
@@ -116,6 +138,7 @@
   border-radius: 70px;
   align-self: center;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .channelsTitle {
@@ -126,14 +149,36 @@
   font-weight: bold;
 }
 
-.flag {
-  width: 158px;
-  height: 83px;
-  margin-top: 10px;
-  border-radius: 25px;
+.nameOfCountry {
   align-self: center;
 }
 
-.nameOfCountry {
-  align-self: center;
+.search-bar {
+  text-align: center;
+  /* Adjust margin as needed */
+  color: white;
+  margin-bottom: 10%;
+}
+
+.search-bar input {
+  width: 30%;
+  height: 50px;
+  border-radius: 50px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  padding-left: 10px;
+  border: 1px solid white;
+}
+
+.search-bar ::placeholder {
+  color: white;
+  opacity: 0.8;
+}
+
+.searchIcon {
+  cursor: pointer;
+  margin-left: 10px;
+  height: 20px;
+  width: auto;
 }
