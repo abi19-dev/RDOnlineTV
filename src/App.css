@@ -3,7 +3,7 @@
 }
 
 #home {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 30, 40, 1)), url('./images/pozadina.png');
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 30, 40, 1)), url('./images/pozadina.png');
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -21,7 +21,6 @@
   background-position: center;
   min-height: 100vh;
   height: auto;
-  padding-top: 80px;
   width: 100%;
   color: white;
   justify-content: center;
@@ -30,12 +29,32 @@
   /* Takes 100% of the viewport height */
 }
 
+#offers {
+  background-image: linear-gradient(to top, rgba(0, 30, 40, 0), rgba(0, 30, 40, 1)),
+    /* Gornji gradijent */
+    linear-gradient(to top, rgba(0, 30, 40, 1), rgba(0, 30, 40, 0)), url('./images/lacasadepapel.jpg');
+  background-size: cover;
+  background-position: top;
+  min-height: 100vh;
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  align-items: center;
+}
+
+.offerBoxes {
+  width: 100%;
+  height: 70%;
+}
+
 #contact {
-  background-image: linear-gradient(to top, rgba(0, 30, 40, 0), rgba(0, 30, 40, 1)), url('./images/pozadina.png');
+  background-color: #001E28;
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  padding-top: 80px;
+  height: 30vh;
   width: 100%;
 }
 
@@ -47,8 +66,6 @@
   align-self: center;
   color: white;
 }
-
-.channelsContent {}
 
 .contentColumn {
   display: flex;
@@ -75,6 +92,7 @@
 
 .flagBoxTxt {
   text-align: center;
+  font-family: LiveSportFinderLatin-Bold;
 }
 
 .contentRow {
@@ -91,6 +109,10 @@
   justify-content: center;
   position: absolute;
   margin-top: 30px;
+}
+
+.line {
+  height: 10px;
 }
 
 .navbar {
@@ -121,7 +143,7 @@
   /* Center the links horizontally */
   align-items: center;
   flex-grow: 1;
-  margin-right: 174px;
+  margin-right: 75px;
 }
 
 .navbar-links a {
@@ -129,6 +151,47 @@
   color: #fff;
   text-decoration: none;
   cursor: pointer;
+  font-family: LiveSportFinderLatin-Bold;
+}
+
+.flags {
+  display: flex;
+  margin-right: 10px;
+}
+
+.flag {
+  width: 30px;
+  /* Adjust size as needed */
+  margin-left: 10px;
+  cursor: pointer;
+  /* Adjust spacing as needed */
+}
+
+.tooltip-container {
+  position: relative;
+}
+
+.mail-icon {
+  cursor: pointer;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  background-color: black;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  user-select: text;
+  text-align: center;
+}
+
+.mail-icon:hover+.tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }
 
 .my-button {
@@ -139,6 +202,19 @@
   align-self: center;
   cursor: pointer;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@font-face {
+  font-family: LiveSportFinderLatin-Bold;
+  src: url(../public/LivesportFinderLatin-Bold_Static.woff2);
+}
+
+.btnTxt {
+  font-family: LiveSportFinderLatin-Bold;
+  text-transform: uppercase;
 }
 
 .channelsTitle {
@@ -157,7 +233,7 @@
   text-align: center;
   /* Adjust margin as needed */
   color: white;
-  margin-bottom: 10%;
+  margin-bottom: 50px;
 }
 
 .search-bar input {
@@ -181,4 +257,137 @@
   margin-left: 10px;
   height: 20px;
   width: auto;
+}
+
+.offerBoxes {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px
+}
+
+.offerBox {
+  height: 300px;
+  width: 20%;
+  background-color: rgba(0, 30, 40, 0.4);
+  /* Background color with 40% opacity */
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.offerBoxTxt {
+  margin: 0px;
+  font-size: 100px;
+  font-family: LiveSportFinderLatin-Bold;
+}
+
+.months {
+  margin: 0px;
+}
+
+.freeTrial {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.freeTrialBox {
+  height: 200px;
+  width: 40%;
+  background-color: rgba(0, 30, 40, 0.4);
+  /* Background color with 40% opacity */
+  color: #fff;
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.orderIPTV {
+  color: white;
+  font-family: LiveSportFinderLatin-Bold;
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.noRes {
+  align-self: center;
+  text-align: center;
+}
+
+.threeChar {
+  align-self: center;
+  text-align: center;
+}
+
+.order {
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3%;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.logoBottomRight {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  z-index: 2;
+}
+
+.poweredBy {
+  font-family: LiveSportFinderLatin-Bold;
+  margin: 0;
+  margin-left: 7px;
+}
+
+.fb {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.ig {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.tg {
+  width: 30px;
+  height: 30px;
+  color: white;
+}
+
+.rights {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  font-family: LiveSportFinderLatin-Bold;
 }

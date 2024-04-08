@@ -2,19 +2,18 @@ import React, { useState, useEffect } from 'react';
 import ShowKanali from './ShowKanali';
 import './App.css'; // Import your CSS file for styling
 import Navbar from './components/Navbar'; // Import your Navbar component
-import pocetnaEng from './images/pocetnaEng.png';
+import logoEng from './images/pocetnaEng.png';
+import logoExYu from './images/pocetnaBiH.png';
 import MyButton from './components/MyButton';
 import SearchBar from './components/MySearch';
-import test from './images/test.jpg'
-import BiH from './images/flags/BiH.svg'
-import Hrv from './images/flags/Hrv.svg'
-import Srb from './images/flags/srb.webp'
-import Slo from './images/flags/Slo.png'
-
-
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTelegram, faInstagram, faDiscord, faViber, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import logoRdLive from './images/rdLive.png';
+import { useTranslation } from './components/LanguageContext';
 
 function App() {
+  const { translate, currentLanguage } = useTranslation();
 
   const scrollToSection = (sectionId) => {
     const section = document.querySelector(sectionId); // Replace '#channels' with the ID of the section you want to scroll to
@@ -28,81 +27,77 @@ function App() {
       <div id="home">
         {/* Add your content here */}
         <div className="homeContent">
-          <img src={pocetnaEng} style={{ width: '720px', height: 'auto' }} />
+          <img src={currentLanguage === 'en' ? logoEng : logoExYu} style={{ width: '720px', height: 'auto' }} />
           <MyButton onClick={() => scrollToSection('#channels')} className="my-button">
-            CHANNELS
+            <h4 className='btnTxt'>{translate('channels')}</h4>
           </MyButton>
+          <div className="logoBottomRight">
+            <h3 className='poweredBy'>Powered by:</h3>
+            <a href="https://rd-live.com/" target="_blank" rel="noopener noreferrer">
+              <img src={logoRdLive} alt="Logo" style={{ width: '150px', height: 'auto' }} />
+            </a>
+          </div>
         </div>
       </div>
       <div id="channels">
-
-        <div className="homeContent">
-          {/* <SearchBar /> */}
-          {/* <h1 onClick={handleClick} className="channelsTitle">
-            Kanali
-          </h1> */}
-        </div>
         <ShowKanali />
-        {/* <div className="contentColumn">
-          <div className="contentRow">
-            <div className="flagBox">
-              <img src={BiH} className='flag' />
-              <h3 className='nameOfCountry'>Bosna i Hercegovina</h3>
-            </div>
-            <div className="flagBox">
-              <img src={Hrv} className='flag' />
-              <h3 className='nameOfCountry'>Hrvatska</h3>
-            </div>
-            <div className="flagBox">
-              <img src={Srb} className='flag' />
-              <h3 className='nameOfCountry'>Srbija</h3>
-            </div>
-            <div className="flagBox">
-              <img src={Slo} className='flag' />
-              <h3 className='nameOfCountry'>Slovenija</h3>
-            </div>
-          </div>
-          <div className="contentRow">
-            <div className="flagBox">
-              <img src={Hrv} className='flag' />
-              <h3 className='nameOfCountry'>Hrvatska</h3>
-            </div>
-            <div className="flagBox">
-              <img src={BiH} className='flag' />
-              <h3 className='nameOfCountry'>Bosna i Hercegovina</h3>
-            </div>
-            <div className="flagBox">
-              <img src={Slo} className='flag' />
-              <h3 className='nameOfCountry'>Slovenija</h3>
-            </div>
-            <div className="flagBox">
-              <img src={Srb} className='flag' />
-              <h3 className='nameOfCountry'>Srbija</h3>
-            </div>
-          </div>
-          <div className="contentRow">
-            <div className="flagBox">
-              <img src={Srb} className='flag' />
-              <h3 className='nameOfCountry'>Srbija</h3>
-            </div>
-            <div className="flagBox">
-              <img src={Slo} className='flag' />
-              <h3 className='nameOfCountry'>Slovenija</h3>
-            </div>
-            <div className="flagBox">
-              <img src={Hrv} className='flag' />
-              <h3 className='nameOfCountry'>Hrvatska</h3>
-            </div>
-            <div className="flagBox">
-              <img src={BiH} className='flag' />
-              <h3 className='nameOfCountry'>Bosna i Hercegovina</h3>
-            </div>
-          </div>
-        </div> */}
       </div>
-      <div id="contact">
-
-        <div className="homeContent">
+      <div id="offers">
+        <div className='offerBoxes'>
+          <div className='offerBox'>
+            <h3 className='months'>{translate('freeTrial')}</h3>
+            <h1 className='offerBoxTxt'>0€</h1>
+          </div>
+          <div className='offerBox'>
+            <h3 className='months'>{translate('oneMonth')}</h3>
+            <h1 className='offerBoxTxt'>10€</h1>
+          </div>
+          <div className='offerBox'>
+            <h3 className='months'>{translate('sixMonths')}</h3>
+            <h1 className='offerBoxTxt'>50€</h1>
+          </div>
+          <div className='offerBox'>
+            <h3 className='months'>{translate('twelveMonths')}</h3>
+            <h1 className='offerBoxTxt'>90€</h1>
+          </div>
+        </div>
+        <div className='order'>
+          <div className='orderIPTV'>{translate('offerText')}</div>
+          <div className='social'>
+            <a href="https://www.instagram.com/rd.live_/" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon className='fb' icon={faInstagram} />
+            </a>
+            <a href="https://discordapp.com/users/486081779997081602" target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon className='fb' icon={faDiscord} />
+            </a>
+            <a href='https://t.me/rdowsk1' target="_blank" rel="noopener noreferrer">
+              <FontAwesomeIcon className='fb' icon={faTelegram} />
+            </a>
+            <div className="tooltip-container">
+              <div className="mail-icon">
+                <FontAwesomeIcon className='fb' icon={faEnvelope} />
+              </div>
+              <div className="tooltip-text">
+                Email: rd.vip4@gmail.com
+              </div>
+            </div>
+            <div className="tooltip-container">
+              <div className="mail-icon">
+                <FontAwesomeIcon className='fb' icon={faViber} />
+              </div>
+              <div className="tooltip-text">
+                Number: +38766123456
+              </div>
+            </div>
+            <div className="tooltip-container">
+              <div className="mail-icon">
+                <FontAwesomeIcon className='fb' icon={faWhatsapp} />
+              </div>
+              <div className="tooltip-text">
+                Number: +38766123456
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
