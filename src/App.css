@@ -11,6 +11,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
+  white-space: wrap;
+  word-break: break-word;
 }
 
 #channels {
@@ -26,6 +29,9 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  overflow: hidden;
+  white-space: wrap;
+  word-break: break-word;
   /* Takes 100% of the viewport height */
 }
 
@@ -41,8 +47,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-
   align-items: center;
+  overflow: hidden;
+  white-space: wrap;
+  word-break: break-word;
 }
 
 .offerBoxes {
@@ -111,10 +119,6 @@
   margin-top: 30px;
 }
 
-.line {
-  height: 10px;
-}
-
 .navbar {
   width: 70%;
   display: flex;
@@ -132,8 +136,9 @@
 
 .navbar-logo img {
   height: 33px;
-  width: 174px;
+  width: auto;
   cursor: pointer;
+  margin-left: 10px;
   /* Adjust as needed */
 }
 
@@ -143,7 +148,6 @@
   /* Center the links horizontally */
   align-items: center;
   flex-grow: 1;
-  margin-right: 75px;
 }
 
 .navbar-links a {
@@ -181,6 +185,7 @@
   background-color: black;
   color: white;
   padding: 5px;
+  width: 150px;
   border-radius: 5px;
   bottom: 120%;
   left: 50%;
@@ -260,15 +265,16 @@
 }
 
 .offerBoxes {
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   justify-content: center;
-  gap: 50px
+  align-items: center;
+  gap: 50px;
 }
 
 .offerBox {
   height: 300px;
-  width: 20%;
+  width: 90%;
   background-color: rgba(0, 30, 40, 0.4);
   /* Background color with 40% opacity */
   color: #fff;
@@ -278,6 +284,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: auto;
   z-index: 1;
 }
 
@@ -317,6 +324,9 @@
   font-family: LiveSportFinderLatin-Bold;
   font-size: 30px;
   margin-top: 30px;
+  text-align: center;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 .noRes {
@@ -365,19 +375,7 @@
   margin-left: 7px;
 }
 
-.fb {
-  width: 30px;
-  height: 30px;
-  color: white;
-}
-
-.ig {
-  width: 30px;
-  height: 30px;
-  color: white;
-}
-
-.tg {
+.icon {
   width: 30px;
   height: 30px;
   color: white;
@@ -390,4 +388,276 @@
   align-items: center;
   gap: 10px;
   font-family: LiveSportFinderLatin-Bold;
+}
+
+.rdOnlineTvLogo img {
+  width: 720px;
+  height: auto;
+}
+
+.logoRdLive img {
+  width: 150px;
+  height: auto;
+}
+
+@media (max-width: 1000px) {
+  .offerBoxes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .offerBox {
+    width: 90%;
+    margin: auto;
+  }
+
+  .search-bar input {
+    width: 40%;
+    height: 50px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-left: 10px;
+    border: 1px solid white;
+  }
+
+  #offers {
+    min-height: 130vh;
+  }
+}
+
+@media (max-width: 730px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    margin: 0;
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    background-color: rgba(0, 30, 40, 0.4);
+    /* Background color with 40% opacity */
+    color: #fff;
+    backdrop-filter: blur(10px);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .navbar-logo img {
+    height: 33px;
+    width: auto;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Adjust as needed */
+  }
+
+  .navbar-links {
+    display: flex;
+    justify-content: center;
+    /* Center the links horizontally */
+    align-items: center;
+    flex-grow: 1;
+  }
+
+  .navbar-links a {
+    margin: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    font-family: LiveSportFinderLatin-Bold;
+  }
+
+  .rdOnlineTvLogo img {
+    width: 500px;
+    height: auto;
+  }
+
+  .orderIPTV {
+    font-size: 25px;
+  }
+
+  #offers {
+    min-height: 130vh;
+  }
+
+  .logoRdLive img {
+    width: 70px;
+    height: auto;
+  }
+
+  .poweredBy {
+    font-size: 13px;
+    margin-left: 3px;
+  }
+
+  .contentColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-bar input {
+    width: 50%;
+    height: 50px;
+    border-radius: 50px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding-left: 10px;
+    border: 1px solid white;
+  }
+
+  .flagBox {
+    width: 90%;
+    margin: auto;
+  }
+
+  .icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .flag {
+    width: 25px;
+    /* Adjust size as needed */
+    margin-left: 10px;
+    cursor: pointer;
+    /* Adjust spacing as needed */
+  }
+}
+
+@media (max-width: 464px) {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+  }
+
+  .container {
+    width: 100%;
+    margin: 0;
+  }
+
+  .navbar-logo img {
+    height: 25px;
+    width: auto;
+    cursor: pointer;
+    margin-left: 10px;
+    /* Adjust as needed */
+  }
+
+  .navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    /* Background color with 40% opacity */
+    color: #fff;
+    backdrop-filter: blur(10px);
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: rgba(0, 30, 40, 0.4);
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .rdOnlineTvLogo img {
+    width: 390px;
+  }
+
+  .navbar {
+    width: 100%;
+    color: #fff;
+  }
+
+  #offers {
+    min-height: 210vh;
+  }
+
+  .navbar-links a {
+    font-size: 10px;
+    margin: 0 10px;
+  }
+
+  .offerBoxes {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .offerBox {
+    width: 90%;
+    margin: auto;
+  }
+
+  .orderIPTV {
+    font-size: 20px;
+  }
+
+  .logoRdLive img {
+    width: 70px;
+  }
+
+  .poweredBy {
+    font-size: 13px;
+    margin-left: 3px;
+  }
+
+  .search-bar input {
+    width: 80%;
+  }
+
+  .flagBoxTxt {
+    font-size: 14px;
+  }
+
+  .contentColumn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .flagBox {
+    width: 90%;
+  }
+
+  .icon {
+    width: 20px;
+    height: 20px;
+  }
+
+  .social {
+    margin-top: 20px;
+  }
+
+  .flag {
+    width: 20px;
+    /* Adjust size as needed */
+    margin-left: 10px;
+    cursor: pointer;
+    /* Adjust spacing as needed */
+  }
 }

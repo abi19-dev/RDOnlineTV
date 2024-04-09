@@ -27,14 +27,18 @@ function App() {
       <div id="home">
         {/* Add your content here */}
         <div className="homeContent">
-          <img src={currentLanguage === 'en' ? logoEng : logoExYu} style={{ width: '720px', height: 'auto' }} />
+          <div className='rdOnlineTvLogo'>
+            <img src={currentLanguage === 'en' ? logoEng : logoExYu} />
+          </div>
           <MyButton onClick={() => scrollToSection('#channels')} className="my-button">
             <h4 className='btnTxt'>{translate('channels')}</h4>
           </MyButton>
           <div className="logoBottomRight">
             <h3 className='poweredBy'>Powered by:</h3>
             <a href="https://rd-live.com/" target="_blank" rel="noopener noreferrer">
-              <img src={logoRdLive} alt="Logo" style={{ width: '150px', height: 'auto' }} />
+              <div className='logoRdLive'>
+                <img src={logoRdLive} alt="Logo" />
+              </div>
             </a>
           </div>
         </div>
@@ -65,17 +69,17 @@ function App() {
           <div className='orderIPTV'>{translate('offerText')}</div>
           <div className='social'>
             <a href="https://www.instagram.com/rd.live_/" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon className='fb' icon={faInstagram} />
+              <FontAwesomeIcon className='icon' icon={faInstagram} />
             </a>
             <a href="https://discordapp.com/users/486081779997081602" target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon className='fb' icon={faDiscord} />
+              <FontAwesomeIcon className='icon' icon={faDiscord} />
             </a>
             <a href='https://t.me/rdowsk1' target="_blank" rel="noopener noreferrer">
-              <FontAwesomeIcon className='fb' icon={faTelegram} />
+              <FontAwesomeIcon className='icon' icon={faTelegram} />
             </a>
             <div className="tooltip-container">
               <div className="mail-icon">
-                <FontAwesomeIcon className='fb' icon={faEnvelope} />
+                <FontAwesomeIcon className='icon' icon={faEnvelope} />
               </div>
               <div className="tooltip-text">
                 Email: rd.vip4@gmail.com
@@ -83,7 +87,7 @@ function App() {
             </div>
             <div className="tooltip-container">
               <div className="mail-icon">
-                <FontAwesomeIcon className='fb' icon={faViber} />
+                <FontAwesomeIcon className='icon' icon={faViber} />
               </div>
               <div className="tooltip-text">
                 Number: +38766123456
@@ -91,7 +95,7 @@ function App() {
             </div>
             <div className="tooltip-container">
               <div className="mail-icon">
-                <FontAwesomeIcon className='fb' icon={faWhatsapp} />
+                <FontAwesomeIcon className='icon' icon={faWhatsapp} />
               </div>
               <div className="tooltip-text">
                 Number: +38766123456
